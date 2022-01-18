@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login-view',
@@ -10,7 +11,7 @@ export class LoginViewComponent implements OnInit {
   email = "";
   password = "";
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -20,9 +21,9 @@ export class LoginViewComponent implements OnInit {
     const validPass = "dsa";
 
     if(this.email === validUser && this.password === validPass) {
-      alert("Login ok");
+      this.router.navigate(['admin']);
     } else {
-      alert("login fail")
+      this.router.navigate(['error']);
     }
   }
 
