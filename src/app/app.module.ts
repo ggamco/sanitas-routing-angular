@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PrincipalViewComponent } from './views/principal-view/principal-view.component';
 import { LoginViewComponent } from './views/login-view/login-view.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { LoginViewComponent } from './views/login-view/login-view.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule // esto es para poder vincular los formularios con objetos en TypeScript
   ],
   providers: [],
   bootstrap: [AppComponent]

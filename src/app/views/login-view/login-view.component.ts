@@ -7,9 +7,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginViewComponent implements OnInit {
 
+  email = "";
+  password = "";
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  login() {
+    const validUser = "asd";
+    const validPass = "dsa";
+
+    if(this.email === validUser && this.password === validPass) {
+      alert("Login ok");
+    } else {
+      alert("login fail")
+    }
   }
 
 }
