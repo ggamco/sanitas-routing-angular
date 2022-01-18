@@ -21,9 +21,10 @@ export class LoginViewComponent implements OnInit {
     const validPass = "dsa";
 
     if(this.email === validUser && this.password === validPass) {
-      this.router.navigate(['admin']);
+      this.router.navigate(['admin'], {queryParams: {name: validUser}});
     } else {
-      this.router.navigate(['error']);
+      console.log(validUser)
+      this.router.navigate(['error'], {queryParams: {name: validUser}});
     }
   }
 
