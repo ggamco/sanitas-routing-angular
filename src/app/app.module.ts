@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { PrincipalViewComponent } from './views/principal-view/principal-view.component';
 import { LoginViewComponent } from './views/login-view/login-view.component';
 import { ErrorViewComponent } from './views/error-view/error-view.component';
+import { AdminViewComponent } from './views/admin-view/admin-view.component';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { ErrorViewComponent } from './views/error-view/error-view.component';
     AppComponent,
     PrincipalViewComponent,
     LoginViewComponent,
-    ErrorViewComponent
+    ErrorViewComponent,
+    AdminViewComponent
   ],
   imports: [
     BrowserModule,
