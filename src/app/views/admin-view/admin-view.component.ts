@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { DataStorageService } from 'src/app/services/data-storage.service';
 
 @Component({
   selector: 'app-admin-view',
@@ -8,7 +9,12 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class AdminViewComponent implements OnInit {
 
-  constructor(private activedRoute: ActivatedRoute) { }
+  messageFromData?: string;
+
+  constructor(
+    private activedRoute: ActivatedRoute,
+    private dataStorage: DataStorageService
+    ) { }
 
   ngOnInit(): void {
     console.log(this.activedRoute.snapshot.paramMap.get('id'));
@@ -17,6 +23,8 @@ export class AdminViewComponent implements OnInit {
     this.activedRoute.queryParams.subscribe(params => {
       console.log(params['op'])
     })
+
+    this.messageFromData = this.dataStorage.message;
   }
 
 }

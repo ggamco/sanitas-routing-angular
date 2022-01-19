@@ -9,8 +9,7 @@ const routes: Routes = [
   {path: "", component: PrincipalViewComponent},
   {path: "login", component: LoginViewComponent},
   {path: "error", component: ErrorViewComponent},
-  {path: "admin/:id/", component: AdminViewComponent},
-  {path: "admin/:name", component: AdminViewComponent},
+  {path: "admin/:id", component: AdminViewComponent},
   {path: "admin/:id/:name", component: AdminViewComponent}
 ];
 
