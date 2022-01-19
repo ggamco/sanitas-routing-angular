@@ -8,6 +8,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class PrincipalViewComponent implements OnInit {
 
+  id = 1;
+
   constructor(
     private router: Router, 
     private activedRoute: ActivatedRoute
@@ -20,7 +22,7 @@ export class PrincipalViewComponent implements OnInit {
   }
 
   goToLoginView() {
-    this.router.navigate(['login']);
+    this.router.navigate(['admin/1'], {queryParams: {op: 'nombre'}});
   }
 
 }
