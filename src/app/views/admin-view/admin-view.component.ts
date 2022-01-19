@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-admin-view',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminViewComponent implements OnInit {
 
-  constructor() { }
+  constructor(private activedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
+    console.log(this.activedRoute.snapshot.paramMap.get('id'));
+    console.log(this.activedRoute.snapshot.paramMap.get('name'));
+    
+    this.activedRoute.queryParams.subscribe(params => {
+      console.log(params['op'])
+    })
   }
 
 }

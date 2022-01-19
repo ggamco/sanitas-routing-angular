@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-principal-view',
@@ -8,9 +8,15 @@ import { Router } from '@angular/router';
 })
 export class PrincipalViewComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(
+    private router: Router, 
+    private activedRoute: ActivatedRoute
+  ) { }
 
   ngOnInit(): void {
+    this.activedRoute.queryParams.subscribe(params => {
+      console.log(params['op']);
+    })
   }
 
   goToLoginView() {
